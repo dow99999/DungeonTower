@@ -10,11 +10,12 @@ package munoz.jorquera.diego.DungeonTower.Model;
  * @author diego
  */
 public abstract class Pocio {
-  private int intensitat;
+  protected int intensitat;
   private String nom;
   
   protected Pocio(String nom, int intensitat){
-    
+    this.nom = nom;
+    this.intensitat = intensitat;
   }
   
   public abstract String efecte(Jugador jugador);

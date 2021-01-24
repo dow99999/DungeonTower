@@ -23,18 +23,17 @@ public class GeneradorMapes {
     
     if(habitacionsNivell.length() % 3 == 0){
       habitacions = new Habitacio[habitacionsNivell.length()/3];
-      
-      for(int i = 0; i < habitacions.length; i++){
+      for(int i = 0; i < habitacionsNivell.length(); i+=3){
         switch(habitacionsNivell.charAt(i)){
           
           //HabitacioPocio
           case 'P':
             switch(habitacionsNivell.charAt(i+1)){
               case 'A':
-                habitacions[i] = new HabitacioPocio(new PocioAtac("A", Numeros.charToInt(habitacionsNivell.charAt(i+2))));
+                habitacions[i/3] = new HabitacioPocio(new PocioAtac("A", Numeros.charToInt(habitacionsNivell.charAt(i+2))));
               break;
               case 'D':
-                habitacions[i] = new HabitacioPocio(new PocioDefensa("D", Numeros.charToInt(habitacionsNivell.charAt(i+2))));
+                habitacions[i/3] = new HabitacioPocio(new PocioDefensa("D", Numeros.charToInt(habitacionsNivell.charAt(i+2))));
               break;
             }
             break;
@@ -43,20 +42,20 @@ public class GeneradorMapes {
           case 'M':
             switch(habitacionsNivell.charAt(i+1)){
               case 'A':
-                habitacions[i] = new HabitacioMonstre(GeneradorMonstres.crearMonstre(TipusMonstre.Ashscream));
+                habitacions[i/3] = new HabitacioMonstre(GeneradorMonstres.crearMonstre(TipusMonstre.Ashscream));
                 break;
               case 'B':
-                habitacions[i] = new HabitacioMonstre(GeneradorMonstres.crearMonstre(TipusMonstre.Bladetree));
+                habitacions[i/3] = new HabitacioMonstre(GeneradorMonstres.crearMonstre(TipusMonstre.Bladetree));
                 break;
               case 'C':
-                habitacions[i] = new HabitacioMonstre(GeneradorMonstres.crearMonstre(TipusMonstre.Cryptvine));
+                habitacions[i/3] = new HabitacioMonstre(GeneradorMonstres.crearMonstre(TipusMonstre.Cryptvine));
                 break;
             }
             break;
             
           //HabitacioBuida
           case '.':
-            habitacions[i] = new HabitacioBuida();
+            habitacions[i/3] = new HabitacioBuida();
             break;
             
         }

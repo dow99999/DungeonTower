@@ -17,7 +17,8 @@ public class PocioDefensa extends Pocio {
 
   @Override
   public String efecte(Jugador jugador) {
-    return null;
+    jugador.modDef(intensitat);
+    return "La defensa del jugador ha incrementat en " + intensitat;
   }
   
 }

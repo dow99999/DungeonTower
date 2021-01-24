@@ -25,7 +25,7 @@ public class Visual {
       out += "\n";
     }
     
-    out += "Cambia en tamano de la ventana hasta que las lineas de arriba esten en el limite superior de la pantalla y este mensaje en el inferior. presiona enter para continuar";
+    out += "Cambia el tamano de la ventana hasta que las lineas de arriba esten en el limite superior de la pantalla y este mensaje en el inferior. presiona enter para continuar";
     
     return out;
   }

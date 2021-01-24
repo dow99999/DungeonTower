@@ -18,7 +18,7 @@ public class HabitacioPocio extends Habitacio {
   
   @Override
   public String activar(Jugador jugador){
-    return null;
+    return pocio.efecte(jugador);
   }
   
   @Override

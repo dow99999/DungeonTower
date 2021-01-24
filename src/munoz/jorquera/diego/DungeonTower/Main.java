@@ -16,7 +16,7 @@ public class Main {
   public static void main(String[] args) {
     Joc j = new Joc(new Jugador());
     
-    j.jugar(GeneradorMapes.crearMapa("........."), true);
+    j.jugar(GeneradorMapes.crearMapa("PA1PA1..."), true);
     
     
   }

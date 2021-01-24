@@ -17,7 +17,8 @@ public class PocioAtac extends Pocio{
 
   @Override
   public String efecte(Jugador jugador) {
-    return null;
+    jugador.modAtc(intensitat);
+    return "L'atac del jugador ha incrementat en " + intensitat;
   }
   
 }

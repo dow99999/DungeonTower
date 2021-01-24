@@ -42,7 +42,7 @@ public class Mapa {
   @Override
   public String toString() {
     String out = "";
-
+    
     for (int j = 0; j < Habitacio.HEIGHT; j++) {
       for (int i = 0; i < habitacions.length; i++) {
         out += habitacions[i].toString(j) + ((i < habitacions.length-1) ? (j == 2 ? " -> " : "    ") : "");
