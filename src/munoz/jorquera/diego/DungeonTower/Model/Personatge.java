@@ -10,11 +10,75 @@ package munoz.jorquera.diego.DungeonTower.Model;
  * @author diego
  */
 public abstract class Personatge {
-  int vida;
-  int atac;
-  int defensa;
-  boolean esticViu;
+  protected int vida;
+  protected int atac;
+  protected int defensa;
+  protected int vidaextra;
+  protected int atacextra;
+  protected int defensaextra;
+  protected boolean esticViu;
+
+  protected Personatge(){
+    vida = 1;
+    atac = 0;
+    defensa = 0;
+    vidaextra = 0;
+    atacextra = 0;
+    defensaextra = 0;
+    esticViu = true;
+  }
   
+  public int getVida() {
+    return vida;
+  }
+
+  public int getAtac() {
+    return atac;
+  }
+
+  public int getDefensa() {
+    return defensa;
+  }
+
+  public int getVidaextra() {
+    return vidaextra;
+  }
+
+  public int getAtacextra() {
+    return atacextra;
+  }
+
+  public int getDefensaextra() {
+    return defensaextra;
+  }
   
+  public int getVidaTotal() {
+    int out = vida + vidaextra;
+    return out < 0 ? 0 : out;
+  }
+
+  public int getAtacTotal() {
+    return atac + atacextra;
+  }
+
+  public int getDefensaTotal() {
+    return defensa + defensaextra;
+  }
   
+  public void modVida(int mod){
+    this.vida += mod;
+    esticViu = vida > 0;
+  }
+  
+  public void modAtc(int mod){
+    this.atacextra += mod;
+  }
+  
+  public void modDef(int mod){
+    this.defensaextra += mod;
+  }
+
+  public boolean isAlive() {
+    return esticViu;
+  }  
 }

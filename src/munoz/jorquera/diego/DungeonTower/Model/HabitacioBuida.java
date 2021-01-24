@@ -18,6 +18,7 @@ public class HabitacioBuida extends Habitacio{
 
   @Override
   public String entrar() {
+    activa = true;
     return null;
   }
 
@@ -31,9 +32,11 @@ public class HabitacioBuida extends Habitacio{
         out = "+-----+";
         break;
       case 1:
-      case 2:
       case 3:
         out = "+     +";
+        break;
+      case 2:
+        out = activa ? "+  J  +" : "+     +";
         break;
     }
     

@@ -13,6 +13,19 @@ public class Monstre extends Personatge{
   private String nom;
   
   protected Monstre(){
+    super();
+  }
+  
+  public void setVidaBase(int vida){
+    this.vida = vida;
+  }
+  
+  public void setAtacBase(int atac){
+    this.atac = atac;
+  }
+  
+  public void setDefensaBase(int defensa){
+    this.defensa = defensa;
   }
   
   public TipusMonstre getNom(){

@@ -24,6 +24,7 @@ public class HabitacioMonstre extends Habitacio{
 
   @Override
   public String entrar() {
+    activa = true;
     return null;
   }
 

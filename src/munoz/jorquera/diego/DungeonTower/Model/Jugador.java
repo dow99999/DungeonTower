@@ -10,7 +10,14 @@ package munoz.jorquera.diego.DungeonTower.Model;
  * @author diego
  */
 public class Jugador extends Personatge{
-  public int vidaMax;
+  public int vidaMax = 10;
   
+  public Jugador(){
+    super();
+    
+    vida = vidaMax;
+    atac = 1;
+    defensa = 1;
+  }
   
 }

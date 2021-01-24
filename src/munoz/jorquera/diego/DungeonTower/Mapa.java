@@ -14,17 +14,29 @@ import munoz.jorquera.diego.DungeonTower.Model.Habitacio;
 public class Mapa {
 
   private Habitacio[] habitacions;
+  private int currenth;
+  
 
   Mapa(Habitacio[] habitacions) {
     this.habitacions = habitacions;
+    currenth = 0;
+    this.habitacions[0].entrar();
   }
 
   public Habitacio getHabitacioActual() {
-    return null;
+    return habitacions[currenth];
   }
 
   public boolean mou() {
-    return true;
+    boolean canMove = (currenth < habitacions.length - 1);
+    
+    if(canMove){
+      habitacions[currenth].sortir();
+      currenth++;
+      habitacions[currenth].entrar();
+    }
+    
+    return canMove;
   }
 
   @Override
@@ -33,7 +45,7 @@ public class Mapa {
 
     for (int j = 0; j < Habitacio.HEIGHT; j++) {
       for (int i = 0; i < habitacions.length; i++) {
-        out += habitacions[i].toString(j) + (j == 2 && i < habitacions.length-1 ? " -> " : "    ");
+        out += habitacions[i].toString(j) + ((i < habitacions.length-1) ? (j == 2 ? " -> " : "    ") : "");
       }
       out += "\n";
     }
