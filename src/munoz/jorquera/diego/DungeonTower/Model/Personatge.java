@@ -66,8 +66,8 @@ public abstract class Personatge {
   }
   
   public void modVida(int mod){
-    this.vida += mod;
-    esticViu = vida > 0;
+    this.vidaextra += mod;
+    esticViu = getVidaTotal() > 0;
   }
   
   public void modAtc(int mod){

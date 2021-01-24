@@ -13,7 +13,7 @@ public class HabitacioBuida extends Habitacio{
 
   @Override
   public String activar(Jugador jugador) {
-    return null;
+    return "Entres a l'habitacio. No hi ha res, esta buida.";
   }
 
   @Override

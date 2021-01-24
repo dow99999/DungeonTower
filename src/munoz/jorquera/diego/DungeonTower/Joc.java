@@ -20,7 +20,8 @@ public class Joc {
   private final Scanner in = new Scanner(System.in);
   
   private Jugador jugador;
-  private final boolean DEBUG = true;
+  private final boolean DEBUG = false;
+  private final int SCREEN_HEIGHT = 30;
   
   public Joc (Jugador jugador){
     this.jugador = jugador;
@@ -30,32 +31,48 @@ public class Joc {
     
     Habitacio current;
     
-    System.out.println(Visual.initWindow(14));
-    if(interactiu)
+    if(interactiu){
+      System.out.println(Visual.initWindow(SCREEN_HEIGHT));
       in.nextLine();
+      Visual.intro(SCREEN_HEIGHT, 500, 5000);
+    }
     
     do{
       current = mapa.getHabitacioActual();
       
-      System.out.println(Visual.clear(7));
+      if(interactiu)
+        System.out.println(Visual.clear(SCREEN_HEIGHT));
+  
       System.out.println(mapa.toString());
       
       //Room Logic
-      if( current instanceof HabitacioBuida){
-         //-----
-      } else if(current instanceof HabitacioMonstre){
-        //TODO battle
-      } else if(current instanceof HabitacioPocio){
-        System.out.println(current.activar(jugador));
-      }
+      System.out.println(current.activar(jugador));
       
       if(DEBUG){
         System.out.println("Stats:\nVida: " + jugador.getVidaTotal() + "\nAtac: " + jugador.getAtacTotal() 
         + "\nDefensa: " + jugador.getDefensaTotal());
       }
       
-      if(interactiu)
+      if(interactiu){
+        System.out.println("Prem [Enter] per entrar a la següent habitació.");
         in.nextLine();
-    }while(mapa.mou());
+        System.out.println(Visual.clear(SCREEN_HEIGHT));
+        Visual.fade(SCREEN_HEIGHT, 300, 300*6);
+      }
+      
+    }while(mapa.mou() && jugador.isAlive());
+    
+    if(interactiu)
+      System.out.println(Visual.clear(SCREEN_HEIGHT));
+    
+    if(!jugador.isAlive()){
+      System.out.println("HAS MORT!! El teu esperit vagarà per la torre eternament...");
+    } else {
+      System.out.println("ENHORABONA!! has sortit de la TORRE");
+    }
+    
+    if(interactiu)
+      Visual.center(SCREEN_HEIGHT, 1);
+    
   }
 }
