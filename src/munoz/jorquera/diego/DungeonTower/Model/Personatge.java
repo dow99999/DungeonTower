@@ -10,6 +10,10 @@ package munoz.jorquera.diego.DungeonTower.Model;
  * @author diego
  */
 public abstract class Personatge {
+  //aqui se ha hecho una diferenciacion entre los stats base de un personaje y los stats modificados
+  //que pueda recibir a lo largo de la partida, en el caso de que se quieran poner pociones que
+  //anulen los efectos de todas las pociones, por ejemplo, se podria implementar facilmente
+  
   protected int vida;
   protected int atac;
   protected int defensa;
@@ -54,7 +58,7 @@ public abstract class Personatge {
   
   public int getVidaTotal() {
     int out = vida + vidaextra;
-    return out < 0 ? 0 : out;
+    return out < 0 ? 0 : out; //la vida siempre un numero positivo o 0
   }
 
   public int getAtacTotal() {
@@ -67,7 +71,7 @@ public abstract class Personatge {
   
   public void modVida(int mod){
     this.vidaextra += mod;
-    esticViu = getVidaTotal() > 0;
+    esticViu = getVidaTotal() > 0; //al modificar la vida guardamos el estado del personaje
   }
   
   public void modAtc(int mod){

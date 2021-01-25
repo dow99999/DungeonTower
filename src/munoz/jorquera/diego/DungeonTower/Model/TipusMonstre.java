@@ -6,7 +6,7 @@
 package munoz.jorquera.diego.DungeonTower.Model;
 
 /**
- *
+ * enum con los tipos de Monstruos que se pueden encontrar dentro del juego
  * @author diego
  */
 

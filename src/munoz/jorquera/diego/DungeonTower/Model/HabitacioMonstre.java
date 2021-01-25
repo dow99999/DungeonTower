@@ -43,7 +43,7 @@ public class HabitacioMonstre extends Habitacio{
     } else if(!monstre.isAlive()){
       out += "Enhorabona, has matat un " + monstre.getNom();
     } else{
-      out += "Enhorabona, has matat un " + monstre.getNom() + " per esgotament"; //TODO sistema para medir la resistencia entre dos personajes (?)
+      out += "Enhorabona, has matat un " + monstre.getNom() + " per esgotament";
     }
     
     return out;
@@ -52,7 +52,7 @@ public class HabitacioMonstre extends Habitacio{
   private String battleLog(String i, Jugador jugador, Monstre monstre){
     String out = "";
     out += i;
-      out += "Jugador " + Visual.HealthBar(jugador.getVidaTotal(), jugador.vidaMax) + "\n";
+      out += "Jugador " + Visual.HealthBar(jugador.getVidaTotal(), jugador.VIDA_MAX) + "\n";
       out += monstre.getNom() + Visual.HealthBar(monstre.getVidaTotal(), monstre.getVida()) + "\n";
       out += "---------------------\n\n";
     return out;
@@ -74,13 +74,13 @@ public class HabitacioMonstre extends Habitacio{
         out = "+-----+";
         break;
       case 1:
-        out = monstre.isAlive() ? "+  M  +" : "+  X  +";
+        out = monstre.isAlive() ? "|  M  |" : "|  X  |";
         break;
       case 2:
-        out = activa ? "+  J  +" : "+     +";
+        out = activa ? "|  J  |" : "|     |";
         break;
       case 3:
-        out = "+     +";
+        out = "|     |";
     }
     
     return out;

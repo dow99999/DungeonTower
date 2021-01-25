@@ -37,13 +37,13 @@ public class HabitacioPocio extends Habitacio {
         out = "+-----+";
         break;
       case 1:
-        out = "+  " + pocio.getNom() + "  +";
+        out = "|  " + pocio.getNom() + "  |";
         break;
       case 2:
-        out = activa ? "+  J  +" : "+     +";
+        out = activa ? "|  J  |" : "|     |";
         break;
       case 3:
-        out = "+     +";
+        out = "|     |";
     }
     
     return out;

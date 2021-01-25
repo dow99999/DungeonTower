@@ -33,10 +33,10 @@ public class HabitacioBuida extends Habitacio{
         break;
       case 1:
       case 3:
-        out = "+     +";
+        out = "|     |";
         break;
       case 2:
-        out = activa ? "+  J  +" : "+     +";
+        out = activa ? "|  J  |" : "|     |";
         break;
     }
     

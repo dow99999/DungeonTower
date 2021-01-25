@@ -18,6 +18,12 @@ import munoz.jorquera.diego.DungeonTower.Model.TipusMonstre;
  * @author diego
  */
 public class GeneradorMapes {
+  
+  /**
+   * Funcion que genera un objeto de tipo mapa a partir de un String con el tipo de habitaciones que se quieren
+   * @param habitacionsNivell String desde el que se construira el array de habitaciones
+   * @return Mapa un mapa con las habitaciones entradas
+   */
   public static Mapa crearMapa(String habitacionsNivell){
     Habitacio[] habitacions = null;
     
@@ -30,10 +36,10 @@ public class GeneradorMapes {
           case 'P':
             switch(habitacionsNivell.charAt(i+1)){
               case 'A':
-                habitacions[i/3] = new HabitacioPocio(new PocioAtac("A", Numeros.charToInt(habitacionsNivell.charAt(i+2))));
+                habitacions[i/3] = new HabitacioPocio(new PocioAtac("A", Utils.valueOfChar(habitacionsNivell.charAt(i+2))));
               break;
               case 'D':
-                habitacions[i/3] = new HabitacioPocio(new PocioDefensa("D", Numeros.charToInt(habitacionsNivell.charAt(i+2))));
+                habitacions[i/3] = new HabitacioPocio(new PocioDefensa("D", Utils.valueOfChar(habitacionsNivell.charAt(i+2))));
               break;
             }
             break;

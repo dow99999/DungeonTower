@@ -27,6 +27,10 @@ public class Mapa {
     return habitacions[currenth];
   }
 
+  /**
+   * Funcion que intenta mover al usuario de la habitacion en la que se encuentra a la siguiente
+   * @return true si ha podido moverse | false si ya no puede continuar
+   */
   public boolean mou() {
     boolean canMove = (currenth < habitacions.length - 1);
     
@@ -39,6 +43,10 @@ public class Mapa {
     return canMove;
   }
 
+  /**
+   * Funcion para ver las habitaciones del mapa una al lado de la otra
+   * @return 
+   */
   @Override
   public String toString() {
     String out = "";

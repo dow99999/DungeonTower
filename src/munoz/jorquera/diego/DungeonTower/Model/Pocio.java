@@ -18,6 +18,11 @@ public abstract class Pocio {
     this.intensitat = intensitat;
   }
   
+  /**
+   * Funcion que aplica los efectos de una pocion a un jugador
+   * @param jugador el jugador
+   * @return mensaje explicativo con los efectos de la pocion sobre el jugador
+   */
   public abstract String efecte(Jugador jugador);
   
   public String getNom(){

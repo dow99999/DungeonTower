@@ -17,6 +17,11 @@ public class GeneradorMonstres extends Monstre{
     super();
   }
   
+  /**
+   * Procedimiento que inicializa los stats de un monstruo segun su tipo
+   * @param aux El monstruo
+   * @param tipus el tipo de monstruo
+   */
   private static void initStats(Monstre aux, TipusMonstre tipus){
     switch(tipus){
       case Ashscream:
@@ -37,6 +42,11 @@ public class GeneradorMonstres extends Monstre{
     }
   }
   
+  /**
+   * Funcion que genera un monstruo dado el nombre de su tipo
+   * @param nom nombre del tipo de monstruo
+   * @return Monstre el monstruo inicializado
+   */
   public static Monstre crearMonstre(String nom){
     Monstre aux = new GeneradorMonstres();
     aux.setNom(nom);
@@ -44,6 +54,11 @@ public class GeneradorMonstres extends Monstre{
     return aux;
   }
   
+  /**
+   * Funcion que genera un monstruo dado su tipo
+   * @param tipus tipo de monstruo
+   * @return Monstre el monstruo inicializado
+   */
   public static Monstre crearMonstre(TipusMonstre tipus){
     Monstre aux = new GeneradorMonstres();
     aux.setNom(tipus);
