@@ -64,16 +64,19 @@ public class Joc {
     
     
     if(!jugador.isAlive()){                                 //Caso perder (primero se comprueba este caso para que no ganemos estando muertos)
-      try{
-        Thread.sleep(5000);                                     //esperamos a que el usuario lea la ultima batalla y mostramos el mensaje final
-      } catch(InterruptedException e) {}
+      if(interactiu)
+        try{
+          Thread.sleep(5000);                                     //esperamos a que el usuario lea la ultima batalla y mostramos el mensaje final
+        } catch(InterruptedException e) {}
       
       System.out.println("HAS MORT!! El teu esperit vagarà per la torre eternament...");
-      off = Visual.skull() / 2;                                 //se guarda la longitud del ASCIIart      
+      if(interactiu)
+        off = Visual.skull() / 2;                                 //se guarda la longitud del ASCIIart      
 
     } else {                                                //Caso ganar
       System.out.println("ENHORABONA!! has sortit de la TORRE");
-      off = Visual.tower() / 2;                                 //se guarda la longitud del ASCIIart
+      if(interactiu)
+        off = Visual.tower() / 2;                                 //se guarda la longitud del ASCIIart
     }
     
     if(interactiu)

@@ -31,20 +31,21 @@ public class Utils {
     int maxLength = 0;
     char aux;
     
+    //Primero buscamos la linea mas larga, que es la que determinara la longitud de la matriz
     for(int i = 0; i < lined.length; i++){
       if(lined[i].length() > maxLength){
         maxLength = lined[i].length();
       }
     }
     
-    System.out.println("{");
+    System.out.println("{"); //abrimos la matriz
     for(int i = 0; i < lined.length; i++){
-      System.out.print("  { ");
+      System.out.print("  { "); //empieza un array interior
       for(int j = 0; j < maxLength; j++){
         if(j < lined[i].length()){
           aux = lined[i].charAt(j);
           System.out.print("'");
-          switch(aux){
+          switch(aux){ //en el caso de ser un caracter que de problemas como \ o ' escapamos el caracter con una \
             case '\\':
             case '\'':
               System.out.print("\\");
@@ -54,12 +55,12 @@ public class Utils {
         } else {
           System.out.print("' ");
         }
-        System.out.print((j == maxLength - 1 ? "'}" : "',"));
+        System.out.print((j == maxLength - 1 ? "'}" : "',")); //colocamos una coma si no hemos llegado al final interior; en caso contrario cerramos el array interior
       }
       if(i != lined.length - 1)
-        System.out.println(",");
+        System.out.println(","); //colocamos una coma si no hemos llegado al final de la matriz
     }
     
-    System.out.println("\n}");
+    System.out.println("\n}"); //cerramos la matriz
   }
 }

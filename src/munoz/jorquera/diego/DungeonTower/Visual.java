@@ -214,6 +214,9 @@ public class Visual {
       for (int j = 0; j < tower[0].length; j++) {
         System.out.print(tower[i][j]);
       }
+      try{
+        Thread.sleep(50);
+      }catch(Exception e){}
       System.out.println();
     }
 
@@ -257,6 +260,9 @@ public class Visual {
       for (int j = 0; j < skull[0].length; j++) {
         System.out.print(skull[i][j]);
       }
+      try{
+        Thread.sleep(50);
+      }catch(Exception e){}
       System.out.println();
     }
 
